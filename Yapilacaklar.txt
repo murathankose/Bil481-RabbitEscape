@@ -1,1 +1,5 @@
 Yapilacaklar:
+
+1- Yeteri kadar havuç toplandığında yeni tavşan oluşur
+2- Portal tool'u ekleme
+3- Harita yatay taraftan bitince tavşanın ölmesi yerine diğer taraftan çıkması
