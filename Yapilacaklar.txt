@@ -3,3 +3,8 @@ Yapilacaklar:
 1- Yeteri kadar havuç toplandığında yeni tavşan oluşur
 2- Portal tool'u ekleme
 3- Harita yatay taraftan bitince tavşanın ölmesi yerine diğer taraftan çıkması
+
+Melissa 2. özelliği
+Murathan 1. özelliği
+Nil 3. özelliği yapması konusunda anlaşıldı.
+Eğer 5 class 5 satır sınırlaması geçilmezse yeni özellikler eklenecek ve buraya tekrardan push edilecektir.
