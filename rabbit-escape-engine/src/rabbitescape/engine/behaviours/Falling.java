@@ -71,6 +71,33 @@ public class Falling extends Behaviour
             case RABBIT_DYING_OF_FALLING_2_SLOPE_RISE_LEFT_2:
             {
                 world.changes.killRabbit( rabbit );
+                world.setSayac(world.getSayac()+1);
+                int arr[][]=world.getArr();
+                int arr2[]=world.getDeathpro();
+                int x=0;
+                for(x=0;world.getSayac()>x;x++) {
+                	if(arr[x][0]==rabbit.x && arr[x][x]==rabbit.y) {
+                		arr2[x]++;
+                		world.setDeathpro(arr2);
+                		if(arr2[x]>=3) {
+                			 Block block =  world.getBlockAt( rabbit.x, rabbit.y+1 );
+                	            
+                         	if(block!=null){
+                         		world.changes.removeBlockAt( rabbit.x, rabbit.y+1);
+                         	}
+                		}
+                		break;
+                	}
+                }
+                if(arr[x][0]!=rabbit.x || arr[x][x]!=rabbit.y) {
+                arr[world.getSayac()][0]=rabbit.x;
+                arr[world.getSayac()][world.getSayac()]=rabbit.y;
+                arr2[world.getSayac()]=1;
+                world.setArr(arr);
+                world.setDeathpro(arr2);
+                }
+                
+                world.changes.killRabbit( rabbit );
                 return true;
             }
             case RABBIT_FALLING:

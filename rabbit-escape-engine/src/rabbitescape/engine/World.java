@@ -18,6 +18,36 @@ import rabbitescape.engine.util.Position;
 
 public class World
 {
+	private int arr[][]=new int[50][50];
+	private int deathpro[]=new int[50];
+	private int sayac;
+	
+    public int[] getDeathpro() {
+		return deathpro;
+	}
+
+	public void setDeathpro(int[] deathpro) {
+		this.deathpro = deathpro;
+	}
+
+	public int getSayac() {
+		return sayac;
+	}
+
+	public void setSayac(int sayac) {
+		this.sayac = sayac;
+	}
+
+	public int[][] getArr() {
+		return arr;
+	}
+
+	public void setArr(int[][] arr) {
+		this.arr = arr;
+	}
+	public int getCount(int a,int b) {
+		return arr[a][b];
+	}
     public static class DontStepAfterFinish extends RabbitEscapeException
     {
         private static final long serialVersionUID = 1L;
