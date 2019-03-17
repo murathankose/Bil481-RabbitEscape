@@ -35,6 +35,22 @@ public class Exploding extends Behaviour
     {
         if ( state == RABBIT_EXPLODING )
         {
+             Block block = world.getBlockAt( rabbit.x+1, rabbit.y );
+        	if(block!=null){
+        		world.changes.removeBlockAt( rabbit.x+1, rabbit.y);	
+        	}
+            block= world.getBlockAt( rabbit.x-1, rabbit.y );
+            if(block!=null){
+            	world.changes.removeBlockAt( rabbit.x-1, rabbit.y);
+            }
+            block= world.getBlockAt( rabbit.x, rabbit.y+1 );
+            if(block!=null){
+            	world.changes.removeBlockAt( rabbit.x, rabbit.y+1);
+            }
+            block= world.getBlockAt( rabbit.x, rabbit.y-1 );
+            if(block!=null){
+            	world.changes.removeBlockAt( rabbit.x, rabbit.y-1);
+            }
             world.changes.killRabbit( rabbit );
             return true;
         }
