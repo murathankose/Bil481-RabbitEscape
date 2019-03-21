@@ -267,8 +267,12 @@ public class Rabbit extends Thing implements Comparable<Rabbit>
     }
 
     /** Rabbots can fall further than rabbits. */
-    private int getFatalHeight()
+    public int getFatalHeight()
     {
         return ( type == Type.RABBIT ? 4 : 5 );
+    }
+
+    public void setFatalHeight( int fatalHeight ) {
+        falling.setFatalHeight(fatalHeight);
     }
 }

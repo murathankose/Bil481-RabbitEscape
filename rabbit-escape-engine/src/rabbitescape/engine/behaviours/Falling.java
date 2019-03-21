@@ -14,7 +14,7 @@ public class Falling extends Behaviour
 
     private final Climbing climbing;
     private final Brollychuting brollychuting;
-    private final int fatalHeight;
+    private int fatalHeight;
 
     public Falling( 
         Climbing climbing, 
@@ -298,4 +298,6 @@ public class Falling extends Behaviour
             saveState, "Falling.heightFallen", heightFallen
         );
     }
+
+    public void setFatalHeight( int fatalHeight ) { this.fatalHeight = fatalHeight; }
 }

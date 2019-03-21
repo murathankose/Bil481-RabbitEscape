@@ -79,6 +79,10 @@ public class Digging extends Behaviour
             {
                 world.changes.removeBlockAt( rabbit.x, rabbit.y + 1 );
                 ++rabbit.y;
+
+                /* Digging rabbits are starting to fall from 1 square below,
+                but they should be falling from 1 square up as normal*/
+                rabbit.setFatalHeight( rabbit.getFatalHeight()-1 );
                 return true;
             }
             case RABBIT_DIGGING_ON_SLOPE:
