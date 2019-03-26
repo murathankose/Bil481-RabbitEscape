@@ -4,7 +4,9 @@ import static rabbitescape.engine.ChangeDescription.State.*;
 
 import rabbitescape.engine.Behaviour;
 import rabbitescape.engine.BehaviourTools;
+import rabbitescape.engine.Block;
 import rabbitescape.engine.ChangeDescription.State;
+import rabbitescape.engine.Direction;
 import rabbitescape.engine.Rabbit;
 import rabbitescape.engine.World;
 import rabbitescape.engine.config.TapTimer;
@@ -48,6 +50,31 @@ public class OutOfBounds extends Behaviour
             case RABBIT_OUT_OF_BOUNDS:
             {
                 checkMars( world, rabbit );
+                if(rabbit.x<0 || rabbit.x>=world.size.width ) {
+                	if(rabbit.x<0) {
+                		Block block = world.getBlockAt( world.size.width-1, rabbit.y );
+                		if(block == null)
+                		rabbit.x=world.size.width-1;
+                		else {
+                			rabbit.x=0;
+                			rabbit.dir=Direction.RIGHT;
+                			
+                			
+                		}
+                	}
+                	else {
+                		Block block = world.getBlockAt( 0, rabbit.y );
+                		if(block == null)
+                		rabbit.x=0;
+                		else {
+                			rabbit.x=world.size.width-1;
+                			rabbit.dir=Direction.LEFT;
+                			
+                		}
+                		
+                	}
+                }
+                else
                 world.changes.killRabbit( rabbit );
                 return true;
             }
@@ -76,3 +103,4 @@ public class OutOfBounds extends Behaviour
         }
     }
 }
+
